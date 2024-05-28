@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Estimation Submission</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='estimation_submission.css' )}}">
+    </head>
+    <body>
+        <h1>Welcome to the Submission Estimation</h1>
+        <!-- <h3>Fill the below form to get the Estimation Calculation</h3> -->
+        <form action ="/estimation_submission" method ='POST'>
+            <label for="title">Title: </label>
+            <select id="title" name="title" required>
+                <option value="Construct residential building">Construct residential building</option>
+                <option value="Design new bridge structure">Design new bridge structure</option>
+                <option value="Inspect city sewage system">Inspect city sewage system</option>
+                <option value="Perform bridge maintenance">Perform bridge maintenance</option>
+            </select><br>
+            <label for="complexity">Complexity: </label>
+            <select id="complexity" name="complexity" required>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select><br>
+            <label for="size">Size: </label>
+            <select id="size" name="size" required>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select><br>
+
+            <label for="task_type">Type of Task: </label>
+            <select id="task_type" name="task_type" required>
+                <option value="Construction">Construction</option>
+                <option value="Design">Design</option>
+                <option value="Inspection">Inspection</option>
+                <option value="Maintenance">Maintenance</option>
+            </select><br>
+           
+
+            <label for="description">Description: </label>
+            <textarea id="description" name="description" required></textarea><br>
+            
+            <button type="submit">Submission</button>
+        </form>
+    </body>
+</html>

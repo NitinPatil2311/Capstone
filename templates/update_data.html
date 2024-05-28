@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Update Estimation Data</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='update_data.css') }}">
+</head>
+<body>
+    <h2>Update Estimation Data</h2>
+    <form method="POST" action="/update_task/{{ task._id }}">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" value="{{ task.title }}"><br>
+        <label for="complexity">Complexity:</label><br>
+        <input type="text" id="complexity" name="complexity" value="{{ task.complexity }}"><br>
+        <label for="size">Size:</label><br>
+        <input type="text" id="size" name="size" value="{{ task.size }}"><br>
+        <label for="task_type">Task Type:</label><br>
+        <input type="text" id="task_type" name="task_type" value="{{ task.task_type }}"><br>
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description">{{ task.description }}</textarea><br>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

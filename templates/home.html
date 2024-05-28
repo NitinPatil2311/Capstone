@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effort Estimation Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Effort Estimation Tool</h1>
+
+        <p class="justify-align">The Effort Estimation Tool is designed to provide accurate effort estimates for various tasks by leveraging historical data stored in a MongoDB database. </p>
+        <p class="justify-align">The tool facilitates user registration and authentication, submission of task details for estimation, and the calculation of effort based on historical data. </p> 
+        <p class="justify-align">The goal is to streamline the process of effort estimation, offering a reliable and user-friendly interface. </p>
+
+        <div class="buttons">
+            <a href="{{ url_for('register') }}" class="btn">Register</a>
+            <a href="{{ url_for('login') }}" class="btn">Login</a>
+        </div>
+    </div>
+</body>
+</html>
