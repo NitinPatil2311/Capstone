@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Effort Estimation Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css')}}"> 
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Effort Estimation Result</h1>
+        <div class="content">
+            <p>The Effort Estimation Tool aims to provide users with accurate estimates for various tasks based on historical data stored in a database.</p>
+        </div>
+        <p>Mean Estimated Effort: {{ task['mean_estimated_effort'] }}</p>
+        <p>Confidence Level: {{ task['confidence_level'] }}</p>
+        <p>Estimated Range (hours): {{ task['min_estimated_range'] }} - {{ task['max_estimated_range'] }}</p>
+        <div class="logout-link">
+            <p><a href="{{ url_for('logout') }}">Logout</a></p>
+        </div>
+    </div>
+</body>
+</html>

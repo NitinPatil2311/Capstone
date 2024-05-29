@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Historical Data</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='show_estimation_submission.css') }}">
+    </head>
+    <body>
+        <h1>Welcome to Effort Estimation Tool</h1>
+        <h3>Historical data for all 4 tasks.</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Complexity</th>
+                    <th>Size</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for t in all_tasks %}
+                <tr>
+                    <td>{{t.title}}</td>
+                    <td>{{t.complexity}}</td>
+                    <td>{{t.size}}</td>
+                    <td>{{t.task_type}}</td>
+                    <td>{{t.description}}</td>
+                    <td class="actions">
+                        <a href="{{ url_for('update_task', id=t._id) }}" class="btn btn-primary">Update</a>
+                        <form action="{{url_for('remove_task', id = t._id) }}" method="POST">
+                            <button type="submit">Delete</button>
+                            </form>
+    
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>
